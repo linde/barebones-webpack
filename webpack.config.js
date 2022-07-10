@@ -12,8 +12,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    // TODO put [contenthash] in here when we now how to clean them up
-    filename: 'index_bundle.js',
+    filename: 'index_bundle_[chunkhash].js',
+    clean: true,
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Hello World!',
