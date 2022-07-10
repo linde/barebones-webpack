@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import css from "./css/base.css";
 
 
-d3.selectAll("rect").style("fill", "orange");
+console.log("hello, world");
+
 
 
