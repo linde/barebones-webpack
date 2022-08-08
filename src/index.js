@@ -10,5 +10,5 @@ import css from "./css/base.css";
 
 console.log("Hello, World!");
 
-
+import './component';
 
