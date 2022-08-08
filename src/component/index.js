@@ -1,7 +1,10 @@
 
+var $ = require("jquery");
+
 import css from "./component.css";
 
+const componentMarkup = `
+    <div class="compClass">hi!</div>
+`;
 
-
-console.log("in status!");
-
+$('body').append(componentMarkup);
