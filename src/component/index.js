@@ -1,6 +1,5 @@
 
-var $ = require("jquery");
-
+import $ from "jquery";
 import css from "./component.css";
 
 const componentMarkup = `

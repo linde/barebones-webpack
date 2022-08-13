@@ -1,7 +1,7 @@
 
 var webpackConfig =  require('./webpack.config.js');
-webpackConfig.entry = {}; // disable the original entry, webpack-karma dealis with it
-
+webpackConfig.entry = {}; // disable the original entry, webpack-karma deals with it
+ 
 
 module.exports = function(config) {
   config.set({
