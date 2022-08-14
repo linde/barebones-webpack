@@ -1,8 +1,7 @@
 const puppeteer = require("puppeteer");
 
-const devServerPort = process.env.PORT;
 
-describe("App.js", () => {
+describe("index.js", () => {
   let browser;
   let page;
 
@@ -11,11 +10,13 @@ describe("App.js", () => {
     page = await browser.newPage();    
   });
 
-  // TODO assert that we have a valid port
+  const devServerPort = process.env.npm_package_config_e2e_port;
 
   it("has a valid qualification server port", () => {
-    expect(parseInt(devServerPort)).toBeDefined();
-    expect(parseInt(devServerPort)).toBeGreaterThan(0);
+    const portInt = parseInt(devServerPort);
+    expect(portInt).toBeDefined();
+    expect(portInt).not.toBeNaN();
+    expect(portInt).toBeGreaterThan(0);
   });
 
   it("contains welcome text", async () => {
@@ -30,8 +31,6 @@ describe("App.js", () => {
     const text = await page.title();
     expect(text.toLowerCase()).toContain("hello");
   });
-
-
 
   afterAll(() => browser.close());
 });
