@@ -11,12 +11,11 @@
   },
   "scripts": {
     "compile": "webpack --mode=${npm_package_config_mode}",
-    "dev-webpack-server": "webpack-dev-server --static=${npm_package_config_dir} --port=${npm_package_config_dev_port} --mode=${npm_package_config_mode}",
+    "dev-webpack-server": "webpack-dev-server --mode=${npm_package_config_mode}",
     "jest-unit": "jest --testPathIgnorePatterns=.*e2e.test.js ${WATCH_ARG}",
     "jest-e2e": "jest --testPathPattern=.*e2e.test.js$ ${WATCH_ARG}",
     "test": "jest ${WATCH_ARG}",
     "build": "npm run compile && npm run test",
-    "static-site": "node e2e/static-server.js",
     "dev": "WATCH_ARG=--watch concurrently npm:dev-webpack-server npm:test"
   },
   "jest": {
@@ -39,8 +38,8 @@
     "d3": "^7.6.1",
     "dc": "^4.2.7",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
     "jest": "^28.1.3",
-    "jest-dev-server": "^6.1.1",
     "jest-puppeteer": "^6.1.1",
     "jquery": "^3.6.0",
     "puppeteer": "^16.1.0",

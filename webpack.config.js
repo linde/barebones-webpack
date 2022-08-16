@@ -1,6 +1,10 @@
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
+const DIR = process.env.npm_package_config_dir;
+const PORT = process.env.npm_package_config_dev_port;
+
+const staticDir = path.resolve(__dirname, DIR);
 
 module.exports = {
   entry: './src/index.js',
@@ -11,13 +15,18 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: staticDir,
     filename: 'index_bundle_[chunkhash].js',
     clean: true,
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Hello World!',
   })],
+
+  devServer: {
+    static: staticDir,
+    port: PORT,
+  },
 
 }
 

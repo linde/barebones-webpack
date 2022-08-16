@@ -1,8 +1,13 @@
 
 // jest-puppeteer.config.js
+
+STATIC=process.env.npm_package_config_dir || "docroot";
+PORT=process.env.npm_package_config_e2e_port || 8080;
+
+
 module.exports = {
     server: {
-        command: `node e2e/static-server.js`,
+        command: `http-server ${STATIC} -p ${PORT}`,
         usedPortAction: 'kill',
     },
 }
