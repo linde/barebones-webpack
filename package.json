@@ -13,7 +13,7 @@
     "compile": "webpack",
     "test": "jest ${WATCH_ARG}",
     "build": "npm run compile && npm run test",
-    "dev": "WATCH_ARG=--watch concurrently \"webpack-dev-server ${WATCH_ARG}\" npm:test"
+    "dev": "WATCH_ARG=--watch concurrently webpack-dev-server npm:test"
   },
   "jest": {
     "moduleFileExtensions": [
