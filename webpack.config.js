@@ -14,6 +14,7 @@ module.exports = {
       { test: /\.css$/i, use: ["style-loader", "css-loader"],},
     ],
   },
+  mode: "none",
   output: {
     path: staticDir,
     filename: 'index_bundle_[chunkhash].js',

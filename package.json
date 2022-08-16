@@ -10,13 +10,10 @@
     "dir": "dist"
   },
   "scripts": {
-    "compile": "webpack --mode=${npm_package_config_mode}",
-    "dev-webpack-server": "webpack-dev-server --mode=${npm_package_config_mode}",
-    "jest-unit": "jest --testPathIgnorePatterns=.*e2e.test.js ${WATCH_ARG}",
-    "jest-e2e": "jest --testPathPattern=.*e2e.test.js$ ${WATCH_ARG}",
+    "compile": "webpack",
     "test": "jest ${WATCH_ARG}",
     "build": "npm run compile && npm run test",
-    "dev": "WATCH_ARG=--watch concurrently npm:dev-webpack-server npm:test"
+    "dev": "WATCH_ARG=--watch concurrently \"webpack-dev-server ${WATCH_ARG}\" npm:test"
   },
   "jest": {
     "moduleFileExtensions": [
